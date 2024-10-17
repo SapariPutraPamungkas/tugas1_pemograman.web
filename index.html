@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Table</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Team 1</th>
+                <th>VS</th>
+                <th>Team 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="team1-score">0</td>
+                <td>VS</td>
+                <td id="team2-score">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center;">
+        <button onclick="addScore('team1')">Tambah Skor Team 1</button>
+        <button onclick="addScore('team2')">Tambah Skor Team 2</button>
+    </div>
+
+    <script>
+        function addScore(team) {
+            let scoreElement = document.getElementById(team + '-score');
+            let score = parseInt(scoreElement.textContent);
+            scoreElement.textContent = score + 1;
+        }
+    </script>
+
+</body>
+</html>
